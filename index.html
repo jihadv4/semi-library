@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semi-Library of APM</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-content">
+        <div class="logo-container">
+          <i class="fas fa-book-open logo-icon"></i>
+          <div class="logo-text">
+            <h1>Semi-Library</h1>
+            <p>Book Finder</p>
+          </div>
+        </div>
+        <p class="header-subtitle">Find books and their exact locations in the library</p>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="search-section">
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Search by title, author, course title, or course code...">
+          <button id="searchButton">Search</button>
+        </div>
+        
+        <div class="filters-container">
+          <div class="filter-row">
+            <div class="filter-group">
+              <label for="yearFilter">
+                <i class="fas fa-calendar-alt"></i> Academic Year
+              </label>
+              <select id="yearFilter">
+                <option value="">All Years</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+              </select>
+            </div>
+            
+            <div class="filter-group">
+              <label for="semesterFilter">
+                <i class="fas fa-clock"></i> Semester
+              </label>
+              <select id="semesterFilter">
+                <option value="">All Semesters</option>
+                <option value="1">1st Semester</option>
+                <option value="2">2nd Semester</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="filter-row">
+            <div class="filter-group full-width">
+              <label for="courseFilter">
+                <i class="fas fa-graduation-cap"></i> Course
+              </label>
+              <select id="courseFilter">
+                <option value="">All Courses</option>
+                <!-- Course options will be populated by JavaScript -->
+              </select>
+            </div>
+          </div>
+          <div class="note"><i><h3>দয়া করে বইগুলো যথা স্থানে রাখবেন </h3></i></div>
+          <div class="filter-actions">
+            <button id="resetFilters" class="reset-button">
+              <i class="fas fa-undo-alt"></i> Reset Filters
+            </button>
+          </div>
+        </div>
+      </section>
+      
+      <section class="results-section">
+        <div class="results-header">
+          <h2>Book Results</h2>
+          <p id="resultCount">Showing all books</p>
+        </div>
+        
+        <div class="books-grid" id="booksGrid">
+          <!-- Book cards will be inserted here by JavaScript -->
+        </div>
+        
+        <div id="noResults" class="no-results hidden">
+          <i class="fas fa-search"></i>
+          <p>No books found matching your search criteria.</p>
+          <button id="clearSearch" class="clear-search-button">Clear Search</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p> All rights reserved &copy; 2025, University of Rajshahi. Applied Mathematics</p>
+      <p>Developed by AMPE </p>
+      <p class="footer-note">Note: Each shelf may contain books from multiple semesters and courses.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
